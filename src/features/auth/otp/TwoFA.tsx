@@ -85,7 +85,7 @@ export default function TwoFA({ challengeId }: { challengeId: string }) {
   const [cells, setCells] = useState<string[]>(Array(6).fill(""));
   const inputsRef = useRef<Array<HTMLInputElement | null>>([]);
   const [status, setStatus] = useState<Status>("idle");
-  const [message, setMessage] = useState<string>("");
+  const [, setMessage] = useState<string>("");
 
   // Локальный дедлайн 30с; после Get new обновляем из API.
   const [expiresAt, setExpiresAt] = useState<number>(() => Date.now() + 30_000);
